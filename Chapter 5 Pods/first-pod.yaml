@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: webapp
+spec:
+  containers:
+    - name: webapp
+      image: richardchesterwood/k8s-fleetman-webapp-angular:release0
+      resources:
+        limits:
+          memory: 512Mi
+          cpu: "1"
+        requests:
+          memory: 256Mi
+          cpu: "0.2"
