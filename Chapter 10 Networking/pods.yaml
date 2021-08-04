@@ -17,7 +17,13 @@ spec:
       containers:
       - name: webapp
         image: richardchesterwood/k8s-fleetman-webapp-angular:release0-5
-
+        resources:
+         limits:
+          memory: 512Mi
+          cpu: "1"
+         requests:
+          memory: 256Mi
+          cpu: "0.2"
 ---
 apiVersion: v1
 kind: Pod
@@ -29,3 +35,10 @@ spec:
   containers:
   - name: queue
     image: richardchesterwood/k8s-fleetman-queue:release1
+    resources:
+         limits:
+          memory: 512Mi
+          cpu: "1"
+         requests:
+          memory: 256Mi
+          cpu: "0.2"
